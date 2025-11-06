@@ -14,6 +14,7 @@ test('add throws an error when arguments are not numbers', () => {
   expect(() => add(1, 'b')).toThrow('Arguments must be numbers');
   expect(() => add(null, undefined)).toThrow('Arguments must be numbers');
   expect(() => add({}, 3)).toThrow('Arguments must be numbers');
+  expect(() => add([], 3)).toThrow('Arguments must be numbers');
 });
 test('subtract throws an error when arguments are not numbers', () => {
   expect(() => subtract('a', 2)).toThrow('Arguments must be numbers');
