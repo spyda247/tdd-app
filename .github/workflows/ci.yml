@@ -1,0 +1,24 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ] # Run when you push to main branch
+  pull_request:
+    branches: [ main ] # Or on pull request to main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4 # Step 1: checkout code
+      - uses: actions/setup-node@v4 # Step 2: Set up Node.js environment
+        with:
+         node-version: '22' # Specify the node version
+
+      - run: npm install # Step 3: Install dependencies
+      - run: npm test # Step 4: Run tests
+
+    
+
+
